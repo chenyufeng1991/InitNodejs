@@ -1,0 +1,1 @@
+[{"constant":true,"inputs":[],"name":"getCoin","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_aa","type":"uint256"}],"name":"sendCoin","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"aa","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}]

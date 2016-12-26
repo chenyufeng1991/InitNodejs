@@ -20,9 +20,17 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
 
     //编译合约，获得其abi
     console.log(web3.eth.compile.solidity(result.toString()));
-    console.log(web3.eth.compile.solidity(result.toString()).info.abiDefinition); //注意观察这里打印出的编译后的代码，testrpc和go-ethereum打印出不同的结果，所以点操作解析也会不同
+    //console.log(web3.eth.compile.solidity(result.toString()).info.abiDefinition); //注意观察这里打印出的编译后的代码，testrpc和go-ethereum打印出不同的结果，所以点操作解析也会不同
 
+    //把JSON转化为String：使用JSON.stringify()
+    var abiString = JSON.stringify(web3.eth.compile.solidity(result.toString()).info.abiDefinition);
 
+    //把该abi写入文件中
+    fs.writeFile("../../contract/abi/abi.txt", abiString, function (err, data) {
+        if(err) {
+            console.log("ERROR:" + err);
+        }
+    });
 });
 
 
