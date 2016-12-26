@@ -29,5 +29,7 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
 var balance = new BigNumber('131242344353464564564574574567456');
 console.log(balance.plus(21).toString(10));
 
-
-
+console.log("web3版本：" + web3.version.api);
+console.log("节点版本：" + web3.version.node);
+console.log("网络协议版本：" + web3.version.network);
+console.log("以太坊协议版本：" + web3.version.ethereum);
