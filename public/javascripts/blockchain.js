@@ -32,4 +32,16 @@ console.log(balance.plus(21).toString(10));
 console.log("web3版本：" + web3.version.api);
 console.log("节点版本：" + web3.version.node);
 console.log("网络协议版本：" + web3.version.network);
-console.log("以太坊协议版本：" + web3.version.ethereum);
+// console.log("以太坊协议版本：" + web3.version.ethereum); //该方法只能在开启以太坊客户端后才能调用，使用testrpc则调用异常
+
+console.log("所有账户：" + web3.eth.accounts);
+web3.eth.defaultAccount = web3.eth.accounts[0];
+console.log("默认账户：" + web3.eth.defaultAccount); //手动设置默认账户
+
+console.log("基地址：" + web3.eth.coinbase);
+console.log("是否挖矿：" + web3.eth.mining);
+console.log("gasprice：" + web3.eth.gasPrice);
+console.log("区块数量：" + web3.eth.blockNumber);
+console.log("以太币数量：" + web3.eth.getBalance(web3.eth.accounts[0]));
+// console.log("以太坊编译器：" + web3.eth.getCompilers()); //该方法只能在开启以太坊客户端后才能调用，使用testrpc则调用异常
+
