@@ -20,10 +20,11 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
 
     //编译合约，获得其abi
     console.log(web3.eth.compile.solidity(result.toString()));
-    console.log(web3.eth.compile.solidity(result.toString()).info.abiDefinition);
+    console.log(web3.eth.compile.solidity(result.toString()).info.abiDefinition); //注意观察这里打印出的编译后的代码，testrpc和go-ethereum打印出不同的结果，所以点操作解析也会不同
 
 
 });
+
 
 //web3默认接入了BigNumber模块，实现对大整数的处理
 var balance = new BigNumber('131242344353464564564574574567456');
