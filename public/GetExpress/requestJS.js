@@ -2,12 +2,14 @@ var http = require('http');
 
 var qs = require('querystring');
 
+//这是一个对象
 var data = {
     a: 123,
     timeS: new Date().getTime()
 };//这是需要提交的数据
 
 var content = qs.stringify(data);
+console.log("content:"+ content);
 
 var options = {
     hostname: '127.0.0.1',

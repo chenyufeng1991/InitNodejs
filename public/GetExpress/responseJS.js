@@ -13,6 +13,7 @@ http.createServer(function (request, response) {
     console.log(value1 + "  " + value2);
 
     if(resName === "getName") {
+        //user是一个标准的JSON
         var user = {
             "user4" : {
                 "name" : "mohit",
