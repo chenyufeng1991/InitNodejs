@@ -35,6 +35,7 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
     //在geth上部署一个合约，获得txHash和合约地址
     //new方法会执行两次，第一次时获得交易hash，第二次是获得合约地址
     //以下方法在geth上测试通过，参数不需要加gas值
+    //交易方法不会被实时响应
     /*
      var MyContract = web3.eth.contract(web3.eth.compile.solidity(result.toString()).MetaCoin.info.abiDefinition);
      MyContract.new({data: web3.eth.compile.solidity(result.toString()).MetaCoin.code, from:web3.eth.accounts[0]}, function (error, myContract) {
@@ -43,10 +44,12 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
 
      } else {
      console.log(myContract.address);
+     myContract.sendCoin(88, {from: web3.eth.accounts[0]}); //不会被立即响应
      console.log(myContract.getCoin({from:web3.eth.accounts[0]}).toString());
      }
      });
-    */
+     */
+
 
     //以下方法在testrpc上测试通过，testrpc可以实时响应，执行方法不需要等待；
     var MyContract = web3.eth.contract(web3.eth.compile.solidity(result.toString()).info.abiDefinition);
@@ -56,11 +59,10 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
 
         } else {
             console.log(myContract.address);
-            myContract.sendCoin(88, {from: web3.eth.accounts[0]});
+            myContract.sendCoin(88, {from: web3.eth.accounts[0]}); // 会被立即响应
             console.log(myContract.getCoin({from:web3.eth.accounts[0]}).toString());
         }
     });
-
 
 });
 
