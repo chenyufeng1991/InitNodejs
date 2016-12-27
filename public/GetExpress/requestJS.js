@@ -4,8 +4,8 @@ var qs = require('querystring');
 
 var data = {
     a: 123,
-    time: new Date().getTime()};//这是需要提交的数据  
-
+    timeS: new Date().getTime()
+};//这是需要提交的数据
 
 var content = qs.stringify(data);
 

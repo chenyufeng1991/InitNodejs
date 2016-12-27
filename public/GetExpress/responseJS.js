@@ -1,9 +1,17 @@
 var http = require('http');
 var url = require('url');
+var qs = require('querystring');
 
 http.createServer(function (request, response) {
 
     var resName = url.parse(request.url).pathname.substr(1);
+    console.log(request.url);
+
+    var arg = url.parse(request.url).query;
+    var value1 = qs.parse(arg)["a"];
+    var value2 = qs.parse(arg)["timeS"];
+    console.log(value1 + "  " + value2);
+
     if(resName === "getName") {
         var user = {
             "user4" : {
