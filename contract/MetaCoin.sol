@@ -8,6 +8,7 @@ contract MetaCoin {
 	}
 
 	function getCoin()constant returns(uint){
+	//uint ii = 99;
 	    return aa;
 	}
 }

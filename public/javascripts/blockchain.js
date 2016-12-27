@@ -22,8 +22,8 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
     console.log(web3.eth.compile.solidity(result.toString()));
     //console.log(web3.eth.compile.solidity(result.toString()).info.abiDefinition); //注意观察这里打印出的编译后的代码，testrpc和go-ethereum打印出不同的结果，所以点操作解析也会不同
 
-    //把JSON转化为String：使用JSON.stringify()
-    var abiString = JSON.stringify(web3.eth.compile.solidity(result.toString()).MetaCoin.info.abiDefinition);
+    //把JSON转化为String：使用JSON.stringify()，这里geth和testrpc获得abi的方式有所不同
+    var abiString = JSON.stringify(web3.eth.compile.solidity(result.toString()).info.abiDefinition);
 
     //把该abi写入文件中
     fs.writeFile("../../contract/abi/abi.txt", abiString, function (err, data) {
@@ -34,16 +34,33 @@ fs.readFile("../../contract/MetaCoin.sol",function (error, result) {
 
     //在geth上部署一个合约，获得txHash和合约地址
     //new方法会执行两次，第一次时获得交易hash，第二次是获得合约地址
-    var MyContract = web3.eth.contract(web3.eth.compile.solidity(result.toString()).MetaCoin.info.abiDefinition);
-    MyContract.new({data: web3.eth.compile.solidity(result.toString()).MetaCoin.code, from:web3.eth.accounts[0], gas: 1000000}, function (error, myContract) {
+    //以下方法在geth上测试通过，参数不需要加gas值
+    /*
+     var MyContract = web3.eth.contract(web3.eth.compile.solidity(result.toString()).MetaCoin.info.abiDefinition);
+     MyContract.new({data: web3.eth.compile.solidity(result.toString()).MetaCoin.code, from:web3.eth.accounts[0]}, function (error, myContract) {
+     if(!myContract.address) {
+     console.log(myContract.transactionHash);
+
+     } else {
+     console.log(myContract.address);
+     console.log(myContract.getCoin({from:web3.eth.accounts[0]}).toString());
+     }
+     });
+    */
+
+    //以下方法在testrpc上测试通过，testrpc可以实时响应，执行方法不需要等待；
+    var MyContract = web3.eth.contract(web3.eth.compile.solidity(result.toString()).info.abiDefinition);
+    MyContract.new({data: web3.eth.compile.solidity(result.toString()).code, from:web3.eth.accounts[0]}, function (error, myContract) {
         if(!myContract.address) {
             console.log(myContract.transactionHash);
 
         } else {
             console.log(myContract.address);
-            myContract.sendCoin(180, {from:web3.eth.accounts[0]});
+            myContract.sendCoin(88, {from: web3.eth.accounts[0]});
+            console.log(myContract.getCoin({from:web3.eth.accounts[0]}).toString());
         }
     });
+
 
 });
 
