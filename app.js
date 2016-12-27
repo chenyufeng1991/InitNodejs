@@ -4,6 +4,12 @@ var os = require('os');
 var url = require('url');
 var fs = require('fs');
 
+/**
+ * 总结js和html之间加载的问题
+ * （1）node可以解析url的请求，然后根据请求的html页面去显示；这是一种服务器端做出的响应；
+ * （2）在html中可以加入js脚本，然后执行js中的方法；
+ *
+ */
 //创建服务器，监听3000端口
 http.createServer(function (request, response) {
     //response.writeHead(200, {'Content-Type': 'text/plain'});
