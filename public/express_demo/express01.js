@@ -2,6 +2,16 @@ var express = require("express");
 var app = express();
 
 //根据不同的请求进行响应
+/**
+ * 这里其实就是RESTful的设计，根据url的不同响应来处理请求；
+ * 一般express都是和RESTful一起来进行设计的。
+ * 一般前端数据可以通过form表单来提交。
+ *
+ *
+ *
+ * 参考文档：http://www.runoob.com/nodejs/nodejs-restful-api.html
+ */
+
 app.get("/", function (request, response) {
     response.send("For One");
 });
