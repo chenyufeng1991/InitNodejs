@@ -1,8 +1,22 @@
-var express = require('express');
+var express = require("express");
 var app = express();
 
-app.get('/', function (request, response) {
-    response.send("Hello World1");
+//根据不同的请求进行响应
+app.get("/", function (request, response) {
+    response.send("For One");
+});
+
+app.get("/getName", function (request, response) {
+    response.send("For Two");
+    console.log("baseUrl：" + request.baseUrl);
+    console.log("body：" + request.body);
+    console.log("hostname:" + request.hostname);
+    console.log("originalUrl:" + request.originalUrl);
+    console.log("params:" + request.params);
+    console.log("path:" + request.path);
+    console.log("protocol:" + request.protocol);
+    console.log("query:" + request.query);
+    console.log("subdomains:" + request.subdomains);
 });
 
 var server = app.listen(8081, function () {
