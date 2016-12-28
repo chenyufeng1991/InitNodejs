@@ -15,7 +15,7 @@ console.log("content:"+ content);
 var options = {
     hostname: '127.0.0.1',
     port: 8081,
-    path: '/getName?' + content,
+    path: '/getHeight?' + content,
     method: 'GET'
 };
 

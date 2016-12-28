@@ -41,6 +41,9 @@ app.get('/getHome', function (req, res) {
     res.end();
 });
 
+var getHeight = require('../../routes/getHeight');
+app.get('/getHeight', getHeight.index);
+
 var server = app.listen(8081, function () {
 
     var host = server.address().address;
