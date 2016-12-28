@@ -10,6 +10,13 @@ app.get('/', function (req, res) {
 //html使用表单提交，接收提交的数据
 app.get('/getName', function (req, res) {
 
+    console.log("baseUrl:" + req.baseUrl);
+    console.log("hostname:" + req.hostname);
+    console.log("originalUrl:" + req.originalUrl);
+    console.log("params:" + req.params);
+    console.log("path:" + req.path);
+    console.log("query:" + req.query.a + "    " + req.query.timeS);
+
     // 输出 JSON 格式
     response = {
         first_name:"chen",
