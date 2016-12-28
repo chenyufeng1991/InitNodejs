@@ -8,13 +8,14 @@ var data = {
     timeS: new Date().getTime()
 };//这是需要提交的数据
 
+//qs可以把对象类型转化为字符串，成为url中的请求参数
 var content = qs.stringify(data);
 console.log("content:"+ content);
 
 var options = {
     hostname: '127.0.0.1',
-    port: 8080,
-    path: '/getHome?' + content,
+    port: 8081,
+    path: '/getName?' + content,
     method: 'GET'
 };
 
