@@ -41,8 +41,13 @@ app.get('/getHome', function (req, res) {
     res.end();
 });
 
+//这里是使用路由，由其他的文件来做处理
 var getHeight = require('../../routes/getHeight');
 app.get('/getHeight', getHeight.index);
+
+//把其他文件作为一个模块引入，然后调用模块中的方法,nodejs的模块化编程；
+var de = require('./otherModule');
+de.deploy();
 
 var server = app.listen(8081, function () {
 
