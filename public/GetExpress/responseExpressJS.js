@@ -46,6 +46,7 @@ var getHeight = require('../../routes/getHeight');
 app.get('/getHeight', getHeight.index);
 
 //把其他文件作为一个模块引入，然后调用模块中的方法,nodejs的模块化编程；
+//注意脚本是按行解释执行的，除了调用的方法以外的代码也会被执行
 var de = require('./otherModule');
 de.deploy();
 
