@@ -49,6 +49,7 @@ app.get('/getHeight', getHeight.index);
 //注意脚本是按行解释执行的，除了调用的方法以外的代码也会被执行
 var de = require('./otherModule');
 de.deploy();
+console.log("引入模块的参数：" + de.deployParams);
 
 var server = app.listen(8081, function () {
 

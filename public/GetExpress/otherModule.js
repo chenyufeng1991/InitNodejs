@@ -6,4 +6,7 @@ function deploy() {
 
 }
 
-module.exports.deploy = deploy;
+var deployParams = 4321;
+
+module.exports.deploy = deploy; //方法的导出
+module.exports.deployParams = deployParams; //变量的导出
