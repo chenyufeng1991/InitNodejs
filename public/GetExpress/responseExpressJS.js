@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
     res.end();
 });
 
-//html使用表单提交，接收提交的数据
+//前端GET请求
 app.get('/getName', function (req, res) {
 
     console.log("baseUrl:" + req.baseUrl);
