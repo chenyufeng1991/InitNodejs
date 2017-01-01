@@ -55,7 +55,7 @@ var server = app.listen(8081, function () {
 
     var host = server.address().address;
     var port = server.address().port;
-    global.ttt = 12345;
+    global.ttt = 12345; //服务启动的时候创建全局变量
 
     console.log("应用实例，访问地址为 http://%s:%s", host, port)
 
