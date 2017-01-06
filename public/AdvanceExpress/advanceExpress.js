@@ -1,5 +1,7 @@
 var express = require("express");
+var cookieParser = require('cookie-parser');
 var app = express();
+app.use(cookieParser()); //用来解析cookie
 
 /**
  * (1)res.json()同res.send()，也可以发送数据；更普遍的可以使用res.send();
@@ -10,6 +12,8 @@ var app = express();
  *
  * -------------
  * (6)客户端发送过来的cookie是在header中的，使用req.headers.cookie读取；然后写一个解析函数，返回的cookie即可用键值对读取；
+ *
+ * (7)获得客户端发送的cookie另一种方式是使用cookie-parser;（建议这种方式解析）
  */
 console.log(__dirname);
 console.log(__filename);
@@ -32,6 +36,10 @@ app.get("/", function (req, res) {
 
     var cookiesList = parseCookie(req.headers.cookie);
     console.log(cookiesList["key1"] + "    " +cookiesList["key2"]);
+
+    //发送过来的是JSON对象(使用这种方式处理方便)
+    console.log(JSON.stringify(req.cookies) + "    " + req.cookies["key1"] + "     " + req.cookies["key2"]);
+
     res.end();
 });
 
