@@ -51,6 +51,12 @@ var de = require('./otherModule');
 de.deploy();
 console.log("引入模块的参数：" + de.deployParams);
 
+//测试：同一个请求是否可以触发不同的路由
+//测试结果:只有第一个app.get('/getRoutes',routesTwo.routes01)会被请求；
+var routesTwo = require('./routesTwo');
+app.get('/getRoutes',routesTwo.routes01);
+app.get('/getRoutes',routesTwo.routes02);
+
 var server = app.listen(8081, function () {
 
     var host = server.address().address;
