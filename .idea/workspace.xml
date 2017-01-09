@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7f97543-fb1f-4a0c-a568-406b49f0dd31" name="Default" comment="读取文件并显示">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/PostExpress/PostModule01.js" afterPath="$PROJECT_DIR$/public/PostExpress/PostModule01.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/PostExpress/PostResponse.js" afterPath="$PROJECT_DIR$/public/PostExpress/PostResponse.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,21 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PostResponse.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostResponse.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/PostExpress/PostResponse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+            <state relative-caret-position="68">
+              <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostModule01.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostModule01.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/PostExpress/PostModule01.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+            <state relative-caret-position="102">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
         <option value="$PROJECT_DIR$/public/GetExpress/multiRoute.js" />
         <option value="$PROJECT_DIR$/public/GetExpress/responseExpressJS.js" />
         <option value="$PROJECT_DIR$/public/PostExpress/PostRequest.js" />
-        <option value="$PROJECT_DIR$/public/PostExpress/PostResponse.js" />
         <option value="$PROJECT_DIR$/public/PostExpress/PostModule01.js" />
+        <option value="$PROJECT_DIR$/public/PostExpress/PostResponse.js" />
       </list>
     </option>
   </component>
@@ -389,7 +389,7 @@
       <workItem from="1483687319985" duration="5207000" />
       <workItem from="1483693677824" duration="3591000" />
       <workItem from="1483929492431" duration="498000" />
-      <workItem from="1483933000152" duration="3903000" />
+      <workItem from="1483933000152" duration="4172000" />
     </task>
     <task id="LOCAL-00001" summary="创建服务器">
       <created>1482755777692</created>
@@ -409,7 +409,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89815000" />
+    <option name="totallyTimeSpent" value="90084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="36" y="23" width="1244" height="777" extended-state="6" />
@@ -773,18 +773,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/PostExpress/PostResponse.js">
+    <entry file="file://$PROJECT_DIR$/public/PostExpress/PostModule01.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/PostExpress/PostModule01.js">
+    <entry file="file://$PROJECT_DIR$/public/PostExpress/PostResponse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        <state relative-caret-position="68">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding />
         </state>
       </provider>
