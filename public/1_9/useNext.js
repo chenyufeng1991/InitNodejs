@@ -18,6 +18,15 @@ app.get('/getOne', function (req, res) {
     res.end();
 });
 
+/**
+ * 多路由响应，同一个请求url用多个路由去响应；
+ * 这是比较推荐的方式；
+ * 比如一个请求转发给区块链，另一个请求转发给数据库；
+ */
+var moduleOne = require('./moduleOne');
+app.get('/getModule', moduleOne.moduleOne01);
+app.get('/getModule', moduleOne.moduleOne02);
+
 app.listen(8000, function () {
     console.log("start");
 });
