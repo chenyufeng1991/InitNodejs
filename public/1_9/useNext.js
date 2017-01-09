@@ -22,6 +22,13 @@ app.get('/getOne', function (req, res) {
  * 多路由响应，同一个请求url用多个路由去响应；
  * 这是比较推荐的方式；
  * 比如一个请求转发给区块链，另一个请求转发给数据库；
+ * 其实这里就是中间件的使用：服务器采取的动作就是middleware
+ */
+
+/**
+ * express应用其实就是由一系列顺序执行的中间件组成；
+ * 中间件就是一个访问express应用传入的req,res,next参数的函数，这个函数可以访问任何通过req,res传入的资源；
+ *
  */
 var moduleOne = require('./moduleOne');
 app.get('/getModule', moduleOne.moduleOne01);
