@@ -6,15 +6,15 @@ var express = require('express');
 var app = express();
 //数据库mongodb使用
 var mongoosejs = require('./mongoose');
-var db = mongoosejs();
+mongoosejs.start();
 
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 app.get('/createUser', function (req, res, next) {
     var user = new User({
-        uid: 2,
-        username: "gaowenjing"
+        uid: 3,
+        username: "zaiji"
     });
 
     user.save(function (error) {
