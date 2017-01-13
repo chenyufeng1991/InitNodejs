@@ -11,7 +11,7 @@ mongoosejs.start();
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
-app.get('/createUser', function (req, res, next) {
+app.get('/', function (req, res, next) {
     var user = new User({
         uid: 3,
         username: "zaiji"
@@ -31,6 +31,6 @@ app.get('/createUser', function (req, res, next) {
     });
 });
 
-app.listen(8080, function () {
+app.listen(8888, function () {
    console.log("Start...");
 });
