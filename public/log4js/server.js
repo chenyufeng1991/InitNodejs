@@ -5,6 +5,10 @@
 var express = require('express');
 var app = express();
 
+/**
+ * maxLogSize:每个文件大小；
+ * backups：备份文件数量，超过数量的文件会被删除；
+ */
 var log4js = require('log4js');
 log4js.configure({
     appenders: [
@@ -12,8 +16,8 @@ log4js.configure({
         {
             type: 'file',
             filename: './access.log',
-            maxLogSize: 102400,
-            backups: 3,
+            maxLogSize: 10,
+            backups: 6,
             category: 'normal'
         }
     ],
