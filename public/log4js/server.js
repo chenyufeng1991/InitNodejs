@@ -26,9 +26,15 @@ var logger = log4js.getLogger('normal');
 //INFO级别及以上的日志会记录在日志文件中
 logger.setLevel('INFO');
 
-//请求的默认级别是INFO
 //调整日志输入格式
-app.use(log4js.connectLogger(logger, { level: log4js.levels.INFO, format:':method :url'}));
+/**
+ * 自动调整日志输出级别，设置为'auto';
+ *日志级别对应规则：
+ http responses 3xx, level = WARN
+ http responses 4xx & 5xx, level = ERROR
+ else, level = INFO
+ */
+app.use(log4js.connectLogger(logger, { level: 'auto', format:':method :url'}));
 
 logger.debug("loglog");
 logger.info("infoinfo");
