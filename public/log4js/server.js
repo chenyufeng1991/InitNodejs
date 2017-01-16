@@ -20,9 +20,12 @@ log4js.configure({
     replaceConsole: true
 });
 
+//参数要和category中的参数相同
 var logger = log4js.getLogger('cheese');
+//如果设置为INFO，则不会打印出比INFO级别低的日志，如：DEBUG/TRACE.
+logger.setLevel('INFO');
 
-app.use(log4js.connectLogger(logger, { level: log4js.levels.INFO }));
+app.use(log4js.connectLogger(logger, { level: log4js.levels.INFO}));
 
 logger.debug("loglog");
 logger.info("infoinfo");
